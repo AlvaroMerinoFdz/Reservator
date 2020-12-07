@@ -10,24 +10,16 @@ using System.Windows.Forms;
 
 namespace Examen2019
 {
-    public partial class frmLogin : Form
+    public partial class FrmPrincipal : Form
     {
-        public frmLogin()
+        public FrmPrincipal()
         {
             InitializeComponent();
         }
 
-        private void btnSalir_Click(object sender, EventArgs e)
+        private void sALIRToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
-
-        }
-
-        private void btnEntrar_Click(object sender, EventArgs e)
-        {
-            FrmPrincipal frmPrincipal = new FrmPrincipal();
-            this.Hide();
-            frmPrincipal.ShowDialog();
         }
     }
 }
