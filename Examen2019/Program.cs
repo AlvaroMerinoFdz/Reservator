@@ -16,7 +16,8 @@ namespace Examen2019
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmPrincipal(2));
+            //Application.Run(new FrmPrincipal(2));
+            Application.Run(new frmLogin());
         }
     }
 }
