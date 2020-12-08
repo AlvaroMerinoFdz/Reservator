@@ -29,82 +29,86 @@ namespace Examen2019
         /// </summary>
         private void InitializeComponent()
         {
-            this.mStripPrincipal = new System.Windows.Forms.MenuStrip();
-            this.aDMINISTRARToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.rESERVASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.iNFORMESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.sALIRToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.aulasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mStripPrincipal.SuspendLayout();
+            this.msMenu = new System.Windows.Forms.MenuStrip();
+            this.tsAdministrar = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsAulas = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsUsuarios = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsReservar = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsInformes = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsSalir = new System.Windows.Forms.ToolStripMenuItem();
+            this.msMenu.SuspendLayout();
             this.SuspendLayout();
             // 
-            // mStripPrincipal
+            // msMenu
             // 
-            this.mStripPrincipal.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aDMINISTRARToolStripMenuItem,
-            this.rESERVASToolStripMenuItem,
-            this.iNFORMESToolStripMenuItem,
-            this.sALIRToolStripMenuItem});
-            this.mStripPrincipal.Location = new System.Drawing.Point(0, 0);
-            this.mStripPrincipal.Name = "mStripPrincipal";
-            this.mStripPrincipal.Size = new System.Drawing.Size(642, 24);
-            this.mStripPrincipal.TabIndex = 0;
-            this.mStripPrincipal.Text = "menuStrip1";
+            this.msMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsAdministrar,
+            this.tsReservar,
+            this.tsInformes,
+            this.tsSalir});
+            this.msMenu.Location = new System.Drawing.Point(0, 0);
+            this.msMenu.Name = "msMenu";
+            this.msMenu.Size = new System.Drawing.Size(642, 24);
+            this.msMenu.TabIndex = 0;
+            this.msMenu.Text = "menuStrip1";
             // 
-            // aDMINISTRARToolStripMenuItem
+            // tsAdministrar
             // 
-            this.aDMINISTRARToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aulasToolStripMenuItem,
-            this.usuariosToolStripMenuItem});
-            this.aDMINISTRARToolStripMenuItem.Name = "aDMINISTRARToolStripMenuItem";
-            this.aDMINISTRARToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
-            this.aDMINISTRARToolStripMenuItem.Text = "ADMINISTRAR";
+            this.tsAdministrar.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsAulas,
+            this.tsUsuarios});
+            this.tsAdministrar.Name = "tsAdministrar";
+            this.tsAdministrar.Size = new System.Drawing.Size(95, 20);
+            this.tsAdministrar.Text = "ADMINISTRAR";
+            this.tsAdministrar.Visible = false;
             // 
-            // rESERVASToolStripMenuItem
+            // tsAulas
             // 
-            this.rESERVASToolStripMenuItem.Name = "rESERVASToolStripMenuItem";
-            this.rESERVASToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
-            this.rESERVASToolStripMenuItem.Text = "RESERVAS";
+            this.tsAulas.Name = "tsAulas";
+            this.tsAulas.Size = new System.Drawing.Size(180, 22);
+            this.tsAulas.Text = "Aulas";
             // 
-            // iNFORMESToolStripMenuItem
+            // tsUsuarios
             // 
-            this.iNFORMESToolStripMenuItem.Name = "iNFORMESToolStripMenuItem";
-            this.iNFORMESToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
-            this.iNFORMESToolStripMenuItem.Text = "INFORMES";
+            this.tsUsuarios.Name = "tsUsuarios";
+            this.tsUsuarios.Size = new System.Drawing.Size(180, 22);
+            this.tsUsuarios.Text = "Usuarios";
+            this.tsUsuarios.Click += new System.EventHandler(this.tsUsuarios_Click);
             // 
-            // sALIRToolStripMenuItem
+            // tsReservar
             // 
-            this.sALIRToolStripMenuItem.Name = "sALIRToolStripMenuItem";
-            this.sALIRToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
-            this.sALIRToolStripMenuItem.Text = "SALIR";
-            this.sALIRToolStripMenuItem.Click += new System.EventHandler(this.sALIRToolStripMenuItem_Click);
+            this.tsReservar.Name = "tsReservar";
+            this.tsReservar.Size = new System.Drawing.Size(71, 20);
+            this.tsReservar.Text = "RESERVAS";
             // 
-            // aulasToolStripMenuItem
+            // tsInformes
             // 
-            this.aulasToolStripMenuItem.Name = "aulasToolStripMenuItem";
-            this.aulasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.aulasToolStripMenuItem.Text = "Aulas";
+            this.tsInformes.Name = "tsInformes";
+            this.tsInformes.Size = new System.Drawing.Size(76, 20);
+            this.tsInformes.Text = "INFORMES";
             // 
-            // usuariosToolStripMenuItem
+            // tsSalir
             // 
-            this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.usuariosToolStripMenuItem.Text = "Usuarios";
+            this.tsSalir.Name = "tsSalir";
+            this.tsSalir.Size = new System.Drawing.Size(49, 20);
+            this.tsSalir.Text = "SALIR";
+            this.tsSalir.Click += new System.EventHandler(this.sALIRToolStripMenuItem_Click);
             // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(642, 318);
-            this.Controls.Add(this.mStripPrincipal);
+            this.Controls.Add(this.msMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MainMenuStrip = this.mStripPrincipal;
+            this.IsMdiContainer = true;
+            this.MainMenuStrip = this.msMenu;
             this.Name = "FrmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPrincipal";
-            this.mStripPrincipal.ResumeLayout(false);
-            this.mStripPrincipal.PerformLayout();
+            this.Load += new System.EventHandler(this.FrmPrincipal_Load);
+            this.msMenu.ResumeLayout(false);
+            this.msMenu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -112,12 +116,12 @@ namespace Examen2019
 
         #endregion
 
-        private System.Windows.Forms.MenuStrip mStripPrincipal;
-        private System.Windows.Forms.ToolStripMenuItem aDMINISTRARToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aulasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem rESERVASToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem iNFORMESToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem sALIRToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip msMenu;
+        private System.Windows.Forms.ToolStripMenuItem tsAdministrar;
+        private System.Windows.Forms.ToolStripMenuItem tsAulas;
+        private System.Windows.Forms.ToolStripMenuItem tsUsuarios;
+        private System.Windows.Forms.ToolStripMenuItem tsReservar;
+        private System.Windows.Forms.ToolStripMenuItem tsInformes;
+        private System.Windows.Forms.ToolStripMenuItem tsSalir;
     }
 }

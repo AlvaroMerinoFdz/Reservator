@@ -12,3 +12,4 @@ C:\Users\Usuario\source\repos\Examen2019\Examen2019\obj\Debug\Examen2019.FrmPrin
 C:\Users\Usuario\source\repos\Examen2019\Examen2019\bin\Debug\EntityFramework.dll
 C:\Users\Usuario\source\repos\Examen2019\Examen2019\bin\Debug\EntityFramework.xml
 C:\Users\Usuario\source\repos\Examen2019\Examen2019\obj\Debug\Examen2019.csproj.CopyComplete
+C:\Users\Usuario\source\repos\Examen2019\Examen2019\obj\Debug\Examen2019.frmUsuarios.resources
