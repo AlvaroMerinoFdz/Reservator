@@ -18,12 +18,10 @@ namespace Examen2019
             InitializeComponent();
             this.perfil = perfil;
         }
-
         private void sALIRToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
             if (this.perfil == 2)
@@ -31,14 +29,20 @@ namespace Examen2019
                 tsAdministrar.Visible = true;
             }
         }
-
         private void tsUsuarios_Click(object sender, EventArgs e)
         {
             frmUsuarios frmUsuarios = new frmUsuarios();
             frmUsuarios.MdiParent = this;
             frmUsuarios.Dock = DockStyle.Fill;
-            frmUsuarios.Show();
-            
+            frmUsuarios.Show();  
+        }
+
+        private void tsAulas_Click(object sender, EventArgs e)
+        {
+            frmAula frmAula = new frmAula();
+            frmAula.MdiParent = this;
+            frmAula.Dock = DockStyle.Fill;
+            frmAula.Show();
         }
     }
 }

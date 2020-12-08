@@ -67,6 +67,7 @@ namespace Examen2019
             this.tsAulas.Name = "tsAulas";
             this.tsAulas.Size = new System.Drawing.Size(180, 22);
             this.tsAulas.Text = "Aulas";
+            this.tsAulas.Click += new System.EventHandler(this.tsAulas_Click);
             // 
             // tsUsuarios
             // 
