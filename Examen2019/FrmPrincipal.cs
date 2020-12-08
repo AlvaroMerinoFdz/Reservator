@@ -12,9 +12,10 @@ namespace Examen2019
 {
     public partial class FrmPrincipal : Form
     {
-        public FrmPrincipal()
+        public FrmPrincipal(int perfil)
         {
             InitializeComponent();
+            this.perfil = perfil;
         }
 
         private void sALIRToolStripMenuItem_Click(object sender, EventArgs e)

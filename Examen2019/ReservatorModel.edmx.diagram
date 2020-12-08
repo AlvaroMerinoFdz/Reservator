@@ -7,7 +7,7 @@
       <Diagram DiagramId="1db94e0a8d814733b0b5dc391127c8ab" Name="Diagram1">
         <EntityTypeShape EntityType="reservatorModel.AULAS" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="reservatorModel.RESERVAS" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="reservatorModel.USUARIOS" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="reservatorModel.USUARIOS" Width="1.5" PointX="5" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="reservatorModel.FK__RESERVAS__Aula__2B3F6F97" ManuallyRouted="false" />
         <AssociationConnector Association="reservatorModel.FK__RESERVAS__Usuari__2A4B4B5E" ManuallyRouted="false" />
       </Diagram>

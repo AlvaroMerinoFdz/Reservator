@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="reservatorModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AULAS">
+    <Key>
+      <PropertyRef Name="Cod_aula" />
+    </Key>
+    <Property Name="Cod_aula" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Descripcion" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Foto" Type="Binary" MaxLength="1" FixedLength="true" />
+    <Property Name="Borrado" Type="Int32" />
+    <NavigationProperty Name="RESERVAS" Relationship="Self.FK__RESERVAS__Aula__2B3F6F97" FromRole="AULAS" ToRole="RESERVAS" />
+  </EntityType>
+  <EntityType Name="RESERVAS">
+    <Key>
+      <PropertyRef Name="Id_reserva" />
+    </Key>
+    <Property Name="Id_reserva" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Usuario" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Aula" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Num_hora" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="AULAS" Relationship="Self.FK__RESERVAS__Aula__2B3F6F97" FromRole="RESERVAS" ToRole="AULAS" />
+    <NavigationProperty Name="USUARIOS" Relationship="Self.FK__RESERVAS__Usuari__2A4B4B5E" FromRole="RESERVAS" ToRole="USUARIOS" />
+  </EntityType>
+  <EntityType Name="USUARIOS">
+    <Key>
+      <PropertyRef Name="Login" />
+    </Key>
+    <Property Name="Login" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Perfil" Type="Int32" Nullable="false" />
+    <Property Name="Borrado" Type="Int32" />
+    <NavigationProperty Name="RESERVAS" Relationship="Self.FK__RESERVAS__Usuari__2A4B4B5E" FromRole="USUARIOS" ToRole="RESERVAS" />
+  </EntityType>
+  <Association Name="FK__RESERVAS__Aula__2B3F6F97">
+    <End Role="AULAS" Type="Self.AULAS" Multiplicity="1" />
+    <End Role="RESERVAS" Type="Self.RESERVAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AULAS">
+        <PropertyRef Name="Cod_aula" />
+      </Principal>
+      <Dependent Role="RESERVAS">
+        <PropertyRef Name="Aula" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RESERVAS__Usuari__2A4B4B5E">
+    <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="1" />
+    <End Role="RESERVAS" Type="Self.RESERVAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIOS">
+        <PropertyRef Name="Login" />
+      </Principal>
+      <Dependent Role="RESERVAS">
+        <PropertyRef Name="Usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="reservatorEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AULAS" EntityType="Self.AULAS" />
+    <EntitySet Name="RESERVAS" EntityType="Self.RESERVAS" />
+    <EntitySet Name="USUARIOS" EntityType="Self.USUARIOS" />
+    <AssociationSet Name="FK__RESERVAS__Aula__2B3F6F97" Association="Self.FK__RESERVAS__Aula__2B3F6F97">
+      <End Role="AULAS" EntitySet="AULAS" />
+      <End Role="RESERVAS" EntitySet="RESERVAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RESERVAS__Usuari__2A4B4B5E" Association="Self.FK__RESERVAS__Usuari__2A4B4B5E">
+      <End Role="USUARIOS" EntitySet="USUARIOS" />
+      <End Role="RESERVAS" EntitySet="RESERVAS" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

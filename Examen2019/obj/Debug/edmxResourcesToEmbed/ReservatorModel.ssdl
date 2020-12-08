@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="reservatorModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AULAS">
+    <Key>
+      <PropertyRef Name="Cod_aula" />
+    </Key>
+    <Property Name="Cod_aula" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="Foto" Type="binary" MaxLength="1" />
+    <Property Name="Borrado" Type="int" />
+  </EntityType>
+  <EntityType Name="RESERVAS">
+    <Key>
+      <PropertyRef Name="Id_reserva" />
+    </Key>
+    <Property Name="Id_reserva" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Usuario" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Aula" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Fecha" Type="date" Nullable="false" />
+    <Property Name="Num_hora" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="USUARIOS">
+    <Key>
+      <PropertyRef Name="Login" />
+    </Key>
+    <Property Name="Login" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Perfil" Type="int" Nullable="false" />
+    <Property Name="Borrado" Type="int" />
+  </EntityType>
+  <Association Name="FK__RESERVAS__Aula__2B3F6F97">
+    <End Role="AULAS" Type="Self.AULAS" Multiplicity="1" />
+    <End Role="RESERVAS" Type="Self.RESERVAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AULAS">
+        <PropertyRef Name="Cod_aula" />
+      </Principal>
+      <Dependent Role="RESERVAS">
+        <PropertyRef Name="Aula" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__RESERVAS__Usuari__2A4B4B5E">
+    <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="1" />
+    <End Role="RESERVAS" Type="Self.RESERVAS" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USUARIOS">
+        <PropertyRef Name="Login" />
+      </Principal>
+      <Dependent Role="RESERVAS">
+        <PropertyRef Name="Usuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="reservatorModelStoreContainer">
+    <EntitySet Name="AULAS" EntityType="Self.AULAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RESERVAS" EntityType="Self.RESERVAS" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="USUARIOS" EntityType="Self.USUARIOS" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__RESERVAS__Aula__2B3F6F97" Association="Self.FK__RESERVAS__Aula__2B3F6F97">
+      <End Role="AULAS" EntitySet="AULAS" />
+      <End Role="RESERVAS" EntitySet="RESERVAS" />
+    </AssociationSet>
+    <AssociationSet Name="FK__RESERVAS__Usuari__2A4B4B5E" Association="Self.FK__RESERVAS__Usuari__2A4B4B5E">
+      <End Role="USUARIOS" EntitySet="USUARIOS" />
+      <End Role="RESERVAS" EntitySet="RESERVAS" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
